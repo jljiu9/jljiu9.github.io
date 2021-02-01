@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="cn" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JLJIUの观影站点</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/788fe276d8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script>
+      var yuan = "https://v.qq.com/x/cover/m441e3rjq9kwpsc/g0035ol5kda.html?ptag=10525"
+      $(document).ready(function(){
+        $('a').click(function(){
+          var temp = $('input').val();
+          if (temp==""){
+            var dizhi = $('a').attr('jiekou')+yuan;
+            $('input').val(yuan);
+            $('.bofang').attr('src',dizhi);
+          }
+          else{
+            dizhi = $('a').attr('jiekou') + temp
+            $('.bofang').attr('src',dizhi);
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <section class="section">
+      <div class="container has-text-centered">
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <div class="dropdown is-hoverable">
+                  <div class="dropdown-trigger">
+                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu" name="button">
+                      <span>解析列表：</span><span class="icon is-small">
+                        <i class="fas fa-angle-down"></i>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                    <div class="dropdown-content">
+                      <a href="#" class="dropdown-item" jiekou="https://api.jiexi.la/?url=">斗罗大陆-腾讯视频-超清-迅速</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <input class="input is-success" type="text" placeholder="输入地址" value="">
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <button class="button is-link is-light">to watch!</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <iframe class="bofang" src="" width="80%" height="550px" frameborder="0" style="background-color: #ecf5ff" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" id="jiekou"></iframe>
+      </div>
+    </section>
+
+    <!-- <div class="container has-text-centered">
+      <iframe width="80%" height="550px" frameborder="0" style="background-color: #ecf5ff" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" allow="autoplay" id="jiekou" src="https://api.jiexi.la/?url=https://v.qq.com/x/cover/m441e3rjq9kwpsc/g0035ol5kda.html?ptag=10525"></iframe>
+    </div> -->
+  </body>
+</html>
